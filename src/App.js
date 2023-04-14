@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import yaml from 'js-yaml';
+import Cross from './pieces/Cross';
+import Naught from './pieces/Naught';
+import Cell from './board/Cell';
+import Board from './board/Board';
 
 function App() {
   const [gameStates, setGameStates] = useState({
@@ -40,23 +44,15 @@ function App() {
   }, []);
 
 
-  console.log(gameStates);
+  // console.log(gameStates);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Battle</p>
       </header>
+      <div className="App-main">
+        <Board gameData={gameStates} />
+      </div>
     </div>
   );
 }
