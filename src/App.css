@@ -76,6 +76,16 @@
   margin-top: 8px;
 }
 
+.team1-text {
+  font-size: 20px;
+  color: #4CAF50;
+}
+
+.team2-text {
+  font-size: 20px;
+  color: #FFEB3B;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

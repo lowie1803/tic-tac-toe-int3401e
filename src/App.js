@@ -59,7 +59,13 @@ function App() {
           avatar="https://avatarfiles.alphacoders.com/156/156748.jpg"
           timeLeft={gameStates.time1}
         />
-        <p>INT3401E 22 Tic-tac-toe Battle Commence!</p>
+        <div>
+          <p>INT3401E 22 Tic-tac-toe Battle Commence!</p>
+          {gameStates.status === gameStates.team1_id &&
+            <p className='team1-text'>{gameStates.team1_id} wins!</p>}
+          {gameStates.status === gameStates.team2_id &&
+            <p className='team2-text'>{gameStates.team2_id} wins!</p>}
+        </div>
         <NameCard
           name={gameStates.team2_id}
           score={gameStates.score2}
