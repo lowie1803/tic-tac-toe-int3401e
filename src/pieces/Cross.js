@@ -9,14 +9,14 @@ function Cross({x, y, radius}) {
           x={x + adjustWidth}
           y={y + adjustWidth}
           points={[0, 0, (radius - adjustWidth) * 2, (radius - adjustWidth) * 2 ]}
-          stroke="blue"
+          stroke="#4CAF50"
           strokeWidth={adjustWidth}
         />
         <Line
           x={x + adjustWidth}
           y={y + adjustWidth}
           points={[0, (radius - adjustWidth) * 2, (radius - adjustWidth) * 2, 0]}
-          stroke="blue"
+          stroke="#4CAF50"
           strokeWidth={adjustWidth}
         />
     </>

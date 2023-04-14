@@ -13,7 +13,7 @@ function Cell({ x, y, width, piece }) {
         height={width}
         fillLinearGradientStartPoint={{ x: width, y: 0 }}
         fillLinearGradientEndPoint={{ x: 0, y: width }}
-        fillLinearGradientColorStops={[0, "#f5f5f5", 1, "#4d4d4d"]}
+        fillLinearGradientColorStops={[0, "#212121", 1, "#D50000"]}
       />
       {
         (piece === 'x' || piece === 'X') && (<Cross x={x} y={y} radius={width / 2} />)

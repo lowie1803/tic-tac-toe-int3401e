@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import yaml from 'js-yaml';
+import { Stage, Layer } from 'react-konva';
 import Cross from './pieces/Cross';
 import Naught from './pieces/Naught';
-import Cell from './board/Cell';
 import Board from './board/Board';
+import NameCard from './NameCard';
 
 function App() {
   const [gameStates, setGameStates] = useState({
@@ -48,10 +48,32 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Battle</p>
+        <Stage width={100} height={100}>
+          <Layer>
+            <Cross x={0} y={0} radius={50} />
+          </Layer>
+        </Stage>
+        <NameCard
+          name={gameStates.team1_id}
+          score={gameStates.score1}
+          avatar="https://avatarfiles.alphacoders.com/156/156748.jpg"
+          timeLeft={gameStates.time1}
+        />
+        <p>INT3401E 22 Tic-tac-toe Battle Commence!</p>
+        <NameCard
+          name={gameStates.team2_id}
+          score={gameStates.score2}
+          avatar="https://i.redd.it/tnpjnvyab2z31.png"
+          timeLeft={gameStates.time2}
+        />
+        <Stage width={100} height={100}>
+          <Layer>
+            <Naught x={0} y={0} radius={50} />
+          </Layer>
+        </Stage>
       </header>
       <div className="App-main">
-        <Board gameData={gameStates} />
+        <Board gameState={gameStates} />
       </div>
     </div>
   );
