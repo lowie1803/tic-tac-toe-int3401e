@@ -5,8 +5,6 @@ import Cell from './Cell';
 function Board({ gameState }) {
   const width = 960;
 
-  console.log(gameState.board);
-
   return (
     <Stage width={width} height={width}>
       <Layer>

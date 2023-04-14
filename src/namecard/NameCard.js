@@ -1,7 +1,9 @@
 import React from 'react';
+import CountdownTimer from './CountdownTimer';
 
 function NameCard(props) {
-  const { name, score, avatar, timeLeft } = props;
+  const { name, score, avatar, timeLeft, isRunning } = props;
+
 
   return (
     <div className="namecard">
@@ -10,7 +12,7 @@ function NameCard(props) {
       <div className="avatar">
         <img src={avatar} alt={name} />
       </div>
-      <div className="time-left">Time Left: {timeLeft}</div>
+      <CountdownTimer time={timeLeft} isRunning={isRunning}/>
     </div>
   );
 }
