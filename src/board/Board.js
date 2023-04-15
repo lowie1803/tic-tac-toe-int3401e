@@ -2,8 +2,14 @@ import React from 'react';
 import { Stage, Layer } from 'react-konva';
 import Cell from './Cell';
 
+function vhToPixels(vh) {
+  const height = window.innerHeight;
+  const pixels = (vh * height) / 100;
+  return pixels;
+}
+
 function Board({ gameState }) {
-  const width = 960;
+  const width = vhToPixels(75);
 
   return (
     <Stage width={width} height={width}>

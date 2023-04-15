@@ -1,4 +1,0 @@
-SERVER_URL: "http://localhost"
-PASSPHRASE: "something cool"
-frontend_port: 3000
-fakedb_port: 3001

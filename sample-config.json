@@ -1,0 +1,6 @@
+{
+  "server_url": "http://localhost",
+  "passphrase": "something cool",
+  "fetch_interval": 500,
+  "fakedb_port": 3001
+}

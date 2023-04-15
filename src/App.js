@@ -1,11 +1,11 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import yaml from 'js-yaml';
 import { Stage, Layer } from 'react-konva';
 import Cross from './pieces/Cross';
 import Naught from './pieces/Naught';
 import Board from './board/Board';
 import NameCard from './namecard/NameCard';
+import config from './config.json';
 
 function App() {
   const [gameStates, setGameStates] = useState({
@@ -24,22 +24,6 @@ function App() {
   const [turn1, setTurn1] = useState(false);
   const [turn2, setTurn2] = useState(false);
 
-
-  const [config, setConfig] = useState({
-    server_url: "http://localhost",
-    passphrase: "something cool",
-    frontend_port: 3000,
-    fakedb_port: 3001
-  });
-
-  useEffect(() => {
-    fetch('/config.yml')
-      .then(response => response.text())
-      .then(yamlText => yaml.load(yamlText))
-      .then(data => setConfig(data));
-  }, []);
-
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`${config.server_url || "http://localhost"}:${config.fakedb_port || 3001}/game_states`);
@@ -53,7 +37,7 @@ function App() {
 
     const intervalId = setInterval(() => {
       fetchData();
-    }, 2000);
+    }, config.fetch_interval || 2000);
 
     return () => clearInterval(intervalId);
   }, []);
