@@ -21,7 +21,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  height: 20vh;
+  height: 18vh;
 }
 
 .App-main {
@@ -47,7 +47,8 @@
   background: linear-gradient(to bottom, #3F51B5, #9C27B0);
   margin: 16px;
   width: 115px;
-  height: 18vh;
+  height: 16vh;
+  justify-content: center;
 }
 
 .name {
